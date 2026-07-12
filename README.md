@@ -1,5 +1,19 @@
 # Teensy Loader - Command Line Version
 
+## Community builds
+
+This fork exists solely to provide convenient prebuilt binaries for people who
+need them. It does not claim authorship of the software: the original work,
+ongoing credit, and thanks belong to Paul Stoffregen and PJRC.
+
+Prebuilt binaries for Linux (x86_64 and arm64), macOS (Intel and Apple Silicon),
+and Windows (x86_64) are attached to this fork's
+[GitHub Releases](https://github.com/o/teensy_loader_cli/releases). Each release
+also includes a `SHA256SUMS.txt` file for verifying the downloads.
+
+The Linux builds dynamically use libusb 0.1, so install your distribution's
+`libusb-0.1` runtime package before running them.
+
 The Teensy Loader is available in a command line version for advanced users who want to automate programming, typically using a Makefile. For most uses, the graphical version in Automatic Mode is much easier. 
 
 http://www.pjrc.com/teensy/loader_cli.html
