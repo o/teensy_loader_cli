@@ -25,7 +25,7 @@ jobs:
             runner: ubuntu-24.04-arm
     runs-on: ${{ matrix.runner }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event.release.tag_name || github.sha }}
 
@@ -44,7 +44,7 @@ jobs:
           tar -C dist -czf "$package.tar.gz" "$package"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: teensy_loader_cli-linux-${{ matrix.arch }}
           path: teensy_loader_cli-linux-${{ matrix.arch }}.tar.gz
@@ -62,7 +62,7 @@ jobs:
             runner: macos-14
     runs-on: ${{ matrix.runner }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event.release.tag_name || github.sha }}
 
@@ -78,7 +78,7 @@ jobs:
           tar -C dist -czf "$package.tar.gz" "$package"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: teensy_loader_cli-macos-${{ matrix.arch }}
           path: teensy_loader_cli-macos-${{ matrix.arch }}.tar.gz
@@ -88,7 +88,7 @@ jobs:
     name: Windows (x86_64)
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event.release.tag_name || github.sha }}
 
@@ -113,7 +113,7 @@ jobs:
           Compress-Archive -Path $package -DestinationPath "$package.zip"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: teensy_loader_cli-windows-x86_64
           path: teensy_loader_cli-windows-x86_64.zip
@@ -128,7 +128,7 @@ jobs:
       contents: write
     steps:
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           path: release-assets
           merge-multiple: true
