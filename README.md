@@ -14,6 +14,13 @@ also includes a `SHA256SUMS.txt` file for verifying the downloads.
 The Linux builds dynamically use libusb 0.1, so install your distribution's
 `libusb-0.1` runtime package before running them.
 
+On macOS, Gatekeeper quarantines binaries downloaded from a browser and
+refuses to run them. Clear the quarantine attribute before running:
+
+```
+xattr -d com.apple.quarantine /path/to/teensy_loader_cli
+```
+
 The Teensy Loader is available in a command line version for advanced users who want to automate programming, typically using a Makefile. For most uses, the graphical version in Automatic Mode is much easier. 
 
 http://www.pjrc.com/teensy/loader_cli.html
