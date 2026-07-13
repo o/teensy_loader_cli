@@ -21,6 +21,12 @@ refuses to run them. Clear the quarantine attribute before running:
 xattr -d com.apple.quarantine /path/to/teensy_loader_cli
 ```
 
+Example usage:
+
+```
+./teensy_loader_cli --mcu=TEENSY40 -w -v /path/to/firmware.hex
+```
+
 The Teensy Loader is available in a command line version for advanced users who want to automate programming, typically using a Makefile. For most uses, the graphical version in Automatic Mode is much easier. 
 
 http://www.pjrc.com/teensy/loader_cli.html
